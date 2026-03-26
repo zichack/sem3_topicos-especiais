@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 03</title>
+</head>
+<body>
+    <h3>Aula #03</h3>
+    <script>
+        let pessoa = {
+            nome: "Helton",
+            idade: 72,
+            profissao: "Coordenador",
+            salario_mes: 97125.40,
+            cabeludo: false
+        }
+        console.log('Tipo: ' + typeof(pessoa));
+        console.log('Nome: ' + pessoa.nome);
+        console.log('Idade: ' + pessoa.idade);
+        console.log('Profissão: ' + pessoa.profissao);
+        console.log('Salário: ' + pessoa.salario_mes);
+        console.log('Cabeludo: ' + pessoa.cabeludo);
+
+        pessoa.salario_mes = 97125.42;
+        console.log('Salário atualizado: ' + pessoa.salario_mes);
+
+        // variável do tipo objeto // objeto é um tipo de dado complexo // objeto sempre dentro de chaves {}
+        let curso = { 
+            curso: 'ADS',
+            coordenador: pessoa,
+            instituicao: 'UP'
+        }
+
+        console.log(curso);
+
+        //variável do tipo array // array é um tipo de objeto // array sempre dentro de colchetes []
+        let professores = [
+            {nome: 'Juliana', materia: 'Java', salario: 40321.90},
+            {nome: 'João Victor', materia: 'Algoritmos', salario: 60321.90},
+            {nome: 'Thiago Detoni', materia: 'Banco de Dados', salario: 920321.90}
+        ];
+
+        console.log("Tipo: " + typeof(professores));
+        console.log("Valor: " + professores);
+        console.log("Professor 2: " + professores[1].nome);
+
+        curso.professores = professores;
+        console.log("Curso FINAL: " + curso);
+        console.log("Salário do Detoni: " + curso.professores[2].salario);
+        
+        //criando função com nome "saudacao" // função é um tipo de dado complexo // função sempre dentro de chaves {}
+        let sauda = function saudacao(){
+            console.log("Olá, seja bem-vindo!");
+        }
+
+        //saudacao();
+        //console.log("Tipo: " + typeof(saudacao));
+        console.log("Tipo de sauda", typeof(sauda));
+
+        function cumprimenta(nome = "Anônimo"){
+            console.log(`Olá, ${nome}! Seja bem-vindo!`);
+        }
+
+        //chamando a função cumprimenta() com e sem argumento
+        cumprimenta("Helton");
+        cumprimenta();
+
+        let fruta = "Abacaxi";
+        console.log("Tipo fruta: " + typeof(fruta));
+        fruta = "Maçã" + 123;
+        console.log("Tipo fruta após concatenação: " + typeof(fruta));
+
+        //exemplo de CAST implícito
+        let idade = 22;
+        console.log("Tipo idade: " + typeof(idade));
+        idade = 23 + ' anos';
+        console.log("Novo tipo idade: " + typeof(idade));
+
+        //CAST explícito
+        let preco = 45.99;
+        console.log("Tipo preco: " + typeof(preco));
+        let precoConvertido = String(preco);
+        console.log("Tipo preco convertido: " + typeof(precoConvertido));
+
+        let dia = "" + 23;
+        console.log("Tipo dia: " + typeof(dia));
+        diaMes = Number(dia);
+        console.log("Tipo dia mês: " + typeof(diaMes));
+        console.log("Valor dia mês: " + diaMes);
+
+        if('5' == 5){ // igual, ou seja, compara apenas o valor, sem comparar o tipo
+            console.log("5 string é igual a 5 number");
+        } else {
+            console.log("5 string NÃO é igual a 5 number");
+        }
+
+        if('5' === 5){ // estritamente igual, ou seja, compara o valor e o tipo
+            console.log("5 string é estritamente igual a 5 number");
+        } else {
+            console.log("5 string NÃO é estritamente igual a 5 number");
+        }
+
+        if(true){ // se usar !true, o resultado será falso
+            console.log("Isso é verdadeiro!");
+        } else {
+            console.log("Isso é falso!");
+        }
+
+        const CARRO = "Punto";
+        if(CARRO === "Corsa"){
+            console.log("Marca: GM");
+        }
+        else if(CARRO === "Hilux"){
+            console.log("Marca: Toyota");
+        }
+        else if(CARRO === "Panto"){
+            console.log("Marca: GTA");
+        }
+        else if(CARRO === "Punto"){
+            console.log("Marca: Fiat");
+        }
+
+        for(let i = 1; i <= 50; i++){
+            console.log(`Valor de i: ${i}`);
+
+            if(i===15){
+                continue; // pula a iteração atual e continua para a próxima
+            }
+
+            if(i===20){
+                break; // interrompe o loop completamente
+            }
+        }
+
+        let j = 10;
+        for(; j >= 5; j--){
+            if(j <= 5) break; // isso fará com que o loop seja interrompido imediatamente, sem executar o console.log
+            console.log(`Valor de j: ${j}`);
+            j--;
+        }
+
+        let k = 1;
+        while(k <= 10){
+            console.log(`Valor de k: ${k}`);
+            k++;
+        }
+    </script>
+</body>
+</html>
