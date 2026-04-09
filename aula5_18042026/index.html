@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 05 - Funções</title>
+
+    <script>
+        //função declarada
+        function cumprimentaHelton(nome = "Não informado", idade = 0) {
+            console.log(`Olá, ${nome}! Você tem ${idade} anos.`);
+        }
+
+        cumprimentaHelton("Helton", 25); // Chama a função para cumprimentar Helton
+
+        const recuperaMarca = function(modelo){
+            if(modelo === "Gol"){
+                return "VolksWagen";
+            }else if(modelo === "Palio"){
+                return "Fiat";
+            }else{
+                return "Não encontrado!";
+            }
+        }
+
+        let retorno = recuperaMarca("Gol");
+        console.log("Retorno: ", retorno);
+
+        let retorno2 = recuperaMarca("Palio");
+        console.log("Retorno: ", retorno2);
+
+        let retorno3 = recuperaMarca("Civic");
+        console.log("Retorno: ", retorno3);
+
+        //arrow function simples
+        let superHeroi = () => console.log("Spiderman");
+
+        //arrow function com parâmetro
+        let superHeroiUP = (nome) => console.log("Super", nome);
+        
+        //arrow function com retorno
+        let superPoder = () => "Deixar todos carecas"
+
+        //chamando as funções
+        let retornoSP = superPoder();
+        console.log("O super poder é: ", retornoSP);
+
+        //arrow function com retorno e mais de um parâmetro
+        let completa = (nome, poder) => `Super Herói: Super-${nome} - Poder: ${poder}`;
+        console.log(completa("Juliana", "Ser pica em PHP"));
+
+        //arrow function com retorno e mais de um parâmetro, sem parênteses
+        let simplesSimples = aluno => `Bem-vindo ${aluno}`;
+        console.log(simplesSimples("Alex"));
+
+        function imprimeAsCarnes(...carnes) {
+
+            //REST parameter em uma função declarada
+            function comoImprimiraAsCarnes(acumulado, atual) {
+            return `${acumulado} ${atual}`;
+
+            }
+
+            return carnes.reduce(comoImprimiraAsCarnes);
+        }
+
+        console.log(imprimeAsCarnes("Frango", "Carne de Sol", "Carne de Porco", "Carne de Vaca"));
+
+        //REST parameter em uma arrow function
+        let imprimeBebidas = (...bebidas) => bebidas.reduce((anterior, atual) => `${anterior} ${atual}`);
+        console.log(imprimeBebidas("Coca-cola", "Fanta", "Guaraná", "Pepsi"));
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
