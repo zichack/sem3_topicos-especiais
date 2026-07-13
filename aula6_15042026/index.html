@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 06 - Closures</title>
+
+    <script>
+        function criarContador(){
+            let contagem = 0; // closure: a função interna tem acesso a essa variável mesmo após a execução da função externa
+
+            return function(){
+                contagem +=1;
+                console.log(`Valor atual: ${contagem}`);
+
+            }
+        }
+        const meuContador = criarContador();
+
+        meuContador();
+        meuContador();
+        meuContador();
+
+        const meuContador2 = criarContador();
+        meuContador2();
+        meuContador();
+
+        function processaVetor(vet, operacao){
+            for(i = 0; i < vet.length; i++){
+                operacao(vet[i]);
+            }   
+        }
+
+        processaVetor([123, 45.9, 20, 10], console.log);
+
+        function multiplicar(multiplicador){
+            return function(value){
+                return value * multiplicador;
+            }
+        }
+
+        const dobra = multiplicar(2);
+        const valorDobrado = dobra(100);
+        console.log(`Valor dobrado: ${valorDobrado}`);
+
+        console.log(`Outro valor dobrado: ${dobra(500)}`);
+
+        const triplica = multiplicar(3);
+        console.log(`Valor triplicado: ${triplica(100)}`);
+
+        
+
+    </script>
+</head>
+<body>
+
+    <h2>Aula 06 - Closures</h2>
+    
+</body>
+</html>

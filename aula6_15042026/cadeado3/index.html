@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        
+        /*function calcularDefesaContraTrojan(forcaBase){
+            const multiplicador = 2; // dobro de dano no trojan
+            const danoFinal = forcaBase * multiplicador;
+
+            return "Dano aplicado no trojan: " + danoFinal;
+        }
+
+        function calcularDefesaContraRansomware(forcaBase){
+            const multiplicador = 5; // dano massivo no ransomware
+            const danoFinal = forcaBase * multiplicador;
+
+            return "Dano aplicado no Ransomware: " + danoFinal;
+        }
+
+        function calcularDefesaContraWorm(forcaBase){
+            const multiplicador = 1.5; // dano moderado no worm
+            const danoFinal = forcaBase * multiplicador;
+
+            return "Dano aplicado no Worm: " + danoFinal;
+        }
+
+        // somar todos os danos acima usando função de ordem superior e closures, limpar códigos.*/
+
+
+    function configurarDefesa(multiplicador) {
+        return function(forcaBase) {
+        return forcaBase * multiplicador;
+        };
+    }
+
+    const defesaTrojan = configurarDefesa(2);
+    const defesaRansomware = configurarDefesa(5);
+    const defesaWorm = configurarDefesa(1.5);
+
+    const totalDano = defesaTrojan(10) + defesaRansomware(10) + defesaWorm(10);
+
+    console.log(totalDano);
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
