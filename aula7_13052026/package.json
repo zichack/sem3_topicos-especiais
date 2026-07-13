@@ -1,0 +1,14 @@
+{
+  "name": "primeiraaulanode",
+  "version": "1.0.1",
+  "description": "esse é um projeto para a matéria topicos especiais.",
+  "license": "ISC",
+  "author": "Mateus Zichack",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node app.js",
+    "prod": "node index.js"
+  }
+}
