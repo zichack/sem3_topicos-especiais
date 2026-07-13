@@ -1,0 +1,23 @@
+{
+  "name": "aula08",
+  "version": "1.0.0",
+  "description": "aula 2 prática node.js",
+  "keywords": [
+    "node",
+    "positivo",
+    "UP",
+    "#NeymarNaCopa"
+  ],
+  "license": "ISC",
+  "author": "mateus",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js",
+    "prod": "node app.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
