@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edição de usuário</h1>
+    <form action="/editar/<%= usuario.id %>" method="POST">
+        <label>Nome: <input type="text" name="nome" value="<%= usuario.nome %>" required /></label>
+
+        <label>E-mail: <input type="email" name="email" value="<%= usuario.email %>" required /></label>
+
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="/">Voltar</a>
+</body>
+</html>

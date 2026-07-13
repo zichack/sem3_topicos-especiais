@@ -1,0 +1,21 @@
+{
+  "name": "aula12",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Mateus Zichack",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/app.js",
+    "prod": "node src/app.js"
+  },
+  "dependencies": {
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "nodemon": "^3.1.14",
+    "pg": "^8.21.0"
+  }
+}

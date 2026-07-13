@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Lista de usuários</title>
+    </head>
+    <body>
+        <h1>Lista de usuários</h1>
+        <a href="/adicionar">Adicionar novo usuário</a>
+        <ul>
+            <% usuarios.forEach(usuario => { %>
+                <li>
+                    <%= usuario.nome %> - <%= usuario.email %>
+                    <a href="/editar/<%= usuario.id %>">[Editar]</a>
+                    <form action="/deletar/<%= usuario.id %>" method="POST">
+                        <button type="submit"
+                            style="background: none; border: none; color: blue; text-decoration: underline; cursor: pointer;"
+                        >[Remover]</button>
+                    </form>
+                </li>
+            <% }) %>
+        </ul>
+    </body>
+</html>
